@@ -1,0 +1,58 @@
+.banner_container{
+    width: 100%;
+    contain: content;
+    height: 416px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../assets/bcq.jpg');
+    .banner_text{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        top: 30%;
+        left: 20%;
+
+        .banner_title{
+            text-align: left;
+            letter-spacing: 0px;
+            color: $white;
+            opacity: 1;
+            height: 79px;
+            font: normal normal normal 74px/111px Poppins;
+
+        }
+        .banner_subtitle{
+            text-align: left;
+            letter-spacing: 0px;
+            color: $white;
+            opacity: 1;
+            font: normal normal normal 67px/91px Monster Clubhouse;
+
+        }
+    }
+    @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+        height: 249px;
+        .banner_text{
+            .banner_title{
+                font: normal normal normal 74px/111px Poppins;
+            }
+            .banner_subtitle{
+                font: normal normal normal 67px/80px Monster Clubhouse;
+            }
+        }
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+        height: 234px;
+        .banner_text{
+            .banner_title{
+                font: normal normal normal 51px/77px Poppins;
+                height: 50px;
+            }
+            .banner_subtitle{
+                font: normal normal normal 51px/61px Monster Clubhouse;
+            }
+        }
+    }
+
+}

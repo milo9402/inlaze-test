@@ -1,0 +1,52 @@
+.header_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    .header_title{
+        color: $primary;
+        text-align: left;
+    }
+    .navbar_container{
+
+        .navbar_list {
+            display: none;
+        }
+        .navbar_home-icons{
+            display: flex;
+           .navbar_messages {
+                margin-right: 15px
+            }
+        }
+
+    }
+
+}
+
+@media only screen and (min-width: $breakpoint-mobile) {
+    .header_container  {
+        .navbar_container{
+            width: 60%;
+            .navbar_list {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+                font: normal normal normal 56px/76px 'Poppins';
+                .navbar_item{
+                    list-style-type: none;
+                    font-size: 13px;
+                    &:hover{
+                        color: $primary;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .navbar_home-icons{
+                display: none;
+            }   
+        }
+    }
+  }

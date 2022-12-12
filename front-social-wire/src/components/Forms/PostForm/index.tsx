@@ -10,8 +10,8 @@ export default function PostForm() {
 
                 <label htmlFor="messages">Messages</label>
                 <input type="text" name='messages' placeholder='create message for share with friends. max 700 chars' id='messages' />
-
-                <button type="submit">Share</button>
+      
+                 <button type="submit">Share</button>
             </form>
         </div>
     </>

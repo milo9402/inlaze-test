@@ -5,7 +5,7 @@ import {ReactComponent as RecentPostsIcon}  from 'assets/icons/chatbox-ellipses.
 
 export default function Navbar() {
   return (
-    <div className='navbar_container'>
+    <nav className='navbar_container'>
       <ul className='navbar_list'>
         <li className="navbar_item">Create Messages</li>
         <li className="navbar_item">My Messages</li>
@@ -16,6 +16,6 @@ export default function Navbar() {
         <RecentPostsIcon/>
         <DropDownIcon/>
       </span>
-    </div>
+    </nav>
   )
 }

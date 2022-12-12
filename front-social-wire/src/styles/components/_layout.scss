@@ -1,0 +1,43 @@
+.layout_container {
+    .layout_mid_title{
+        padding-left: 70px;
+        font: normal normal normal 67px/91px Monster Clubhouse;
+        text-align: left;
+        letter-spacing: 0px;
+        color: $primary;
+        margin: 2% 0% 5% 0;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        margin: 0 5% 5% 5%;
+        height: 640px;
+        max-height: 640px;
+    }
+
+
+    @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+        
+        .layout_mid_title {
+            padding-left: 0;
+            font: normal normal normal 54px/65px Monster Clubhouse;
+        }
+        main {
+            height: auto;
+            margin: 0 13% 10% 13%;
+
+        }
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+        .layout_mid_title {
+            padding-left: 0;
+            text-align: center;
+            font: normal normal normal 54px/65px Monster Clubhouse;
+        }
+        main {
+            height: auto;
+            margin: 0 8% 10% 8%;
+
+        }
+    }
+}

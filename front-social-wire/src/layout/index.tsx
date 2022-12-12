@@ -8,11 +8,10 @@ export default function Layout({children}: any) {
   return (
     <div className='layout_container'>
         <Header/>
-        <main>
-          Aqui esta el inicio de las cosas
+        {/* <main>
           {children}
         </main>
-        <Footer/>
+        <Footer/> */}
     </div>
   )
 }
