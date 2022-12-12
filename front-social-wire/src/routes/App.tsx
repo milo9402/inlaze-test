@@ -1,19 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import Login from 'pages/Login';
+import Layout from 'layout';
 function App() {
   return (
       <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<>ruta Login/Crear cuenta</>}/>
-            <Route path='/new-post' element={<>Crear post</>}/>
-            <Route path='/my-posts' element={<>ruta Listado de Post</>}/>
-            <Route path='/all-post' element={<>ruta Listado de todos los Post</>}/>
-            <Route path='/*' element={<> Pagina no encontrada - 404</>}/>
-          </Routes>
+        <Layout>
+            <Routes>
+              <Route path='/' element={<Login/>}/>
+              <Route path='/new-post' element={<>Crear post</>}/>
+              <Route path='/my-posts' element={<>ruta Listado de Post</>}/>
+              <Route path='/all-post' element={<>ruta Listado de todos los Post</>}/>
+              <Route path='/*' element={<> Pagina no encontrada - 404</>}/>
+            </Routes>
+        </Layout>
       </BrowserRouter>
-
-
   );
 }
 
