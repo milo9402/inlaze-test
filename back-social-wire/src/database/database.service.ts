@@ -10,13 +10,13 @@ export const databaseProviders = [
     inject: [ConfigService],
     async useFactory(config: ConfigService) {
       return {
-        ssl: true,
-        type: 'postgres' as const,
-        host: config.get(Configuration.HOST),
-        username: config.get(Configuration.USERNAME),
-        password: config.get(Configuration.PASSWORD),
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-        migrations: [__dirname + '/migrations/*{.ts,.js}'],
+        type: 'sqlite',
+        database: config.get(Configuration.DATABASE),
+        entities: [__dirname + '/../**/*.entity.{js,ts}'],
+        synchronize: true,
+        dropSchema: true,
+        autoLoadEntities: true,
+        // migrations: [__dirname + '/migrations/*{.ts,.js}'],
       } as ConnectionOptions;
     },
   }),

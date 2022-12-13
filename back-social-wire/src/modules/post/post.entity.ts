@@ -1,9 +1,17 @@
-import { BaseEntity, Column, Entity, PrimaryColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { User } from '../user/user.entity';
 
 @Entity('post')
 export class Post extends BaseEntity {
-  @PrimaryColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'varchar', unique: true, length: 20, nullable: false })
@@ -12,14 +20,13 @@ export class Post extends BaseEntity {
   @Column({ type: 'varchar', unique: true, length: 80, nullable: false })
   messaje: string;
 
-  //   @ManyToOne((type) => User, (user) => user.tuits, { cascade: true })
-  //   @JoinColumn({ name: 'user_id' })
-  @Column({ type: 'varchar', nullable: false })
+  @ManyToOne((type) => User, (user) => user.username)
+  @JoinColumn()
   user: User;
 
-  @Column({ type: 'timestamp', name: 'created_at' })
-  createdAt: Date;
+  @CreateDateColumn({ name: 'created_at' })
+  createdAt: string;
 
-  @Column({ type: 'timestamp', name: 'updated_at' })
-  updatedAt: Date;
+  @CreateDateColumn({ name: 'updated_at' })
+  updatedAt: string;
 }

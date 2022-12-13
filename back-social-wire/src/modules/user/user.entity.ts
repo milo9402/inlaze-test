@@ -1,8 +1,17 @@
-import { BaseEntity, Column, Entity, PrimaryColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Post } from '../post/post.entity';
 
 @Entity('users')
 export class User extends BaseEntity {
-  @PrimaryColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'varchar', unique: true, length: 25, nullable: false })
@@ -17,9 +26,13 @@ export class User extends BaseEntity {
   @Column({ type: 'boolean', default: true })
   status: boolean;
 
-  @Column({ type: 'timestamp', name: 'created_at' })
-  createdAt: Date;
+  @OneToMany((type) => Post, (post) => post.id)
+  @JoinColumn()
+  post: Post[];
 
-  @Column({ type: 'timestamp', name: 'updated_at' })
-  updatedAt: Date;
+  @CreateDateColumn({ name: 'created_at' })
+  createdAt: string;
+
+  @CreateDateColumn({ name: 'updated_at' })
+  updatedAt: string;
 }

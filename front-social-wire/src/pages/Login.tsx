@@ -2,8 +2,6 @@ import React, {useState} from 'react'
 import SiginForm from 'components/Forms/SigninForm/index';
 import SignUpForm from 'components/Forms/SignupForm';
 import WireImage from 'assets/image/image.png';
-import Card from 'components/Card';
-import PostForm from '../components/Forms/PostForm/index';
 
 export default function Login() {
 
@@ -30,9 +28,6 @@ export default function Login() {
         </label>
         <span> Sign In</span>
       </span>
-      {/* <SiginForm/>
-      <SignUpForm/> */}
-      {/* <PostForm/> */}
       { toggleForm() }
       <p className='login_copy'> 
         <span>

@@ -9,7 +9,7 @@ import { UserModule } from './modules/user/user.module';
 import { PostModule } from './modules/post/post.module';
 
 @Module({
-  imports: [ConfigModule, DatabaseModule, UserModule, PostModule],
+  imports: [ConfigModule, UserModule, DatabaseModule, PostModule],
   controllers: [AppController],
   providers: [AppService],
 })
