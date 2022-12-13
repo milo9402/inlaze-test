@@ -8,4 +8,12 @@
     color: black;
     font-weight: 900;
     min-width: 250px ;
+    &.share-button{
+        min-width: 100px;
+        width: 100px;
+        display: flex;
+        align-self: end;
+    }
+}.primay{
+    background-color: $primary;
 }

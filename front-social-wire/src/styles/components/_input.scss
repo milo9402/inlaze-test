@@ -11,6 +11,9 @@
         cursor: pointer;
         border-radius: 25px;
         color: $white;
+        &.new-message{
+          height: 150px;
+        }
     }
 
     label{
@@ -85,3 +88,5 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+

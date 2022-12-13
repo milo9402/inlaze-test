@@ -35,10 +35,11 @@
                 justify-content: space-between;
                 align-items: center;
                 margin: 0;
-                font: normal normal normal 56px/76px 'Poppins';
+                font: normal normal normal 56px/76px;
+                font-weight: 800;
                 .navbar_item{
                     list-style-type: none;
-                    font-size: 13px;
+                    font-size: 15px;
                     &:hover{
                         color: $primary;
                         cursor: pointer;

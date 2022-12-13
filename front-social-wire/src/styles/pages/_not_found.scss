@@ -1,0 +1,11 @@
+.not-found-page_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    .not-found-page_img{
+        aspect-ratio: 1;
+        height: 200px;
+    }
+}

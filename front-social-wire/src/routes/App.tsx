@@ -6,16 +6,20 @@ import Login from 'pages/Login';
 import AllPost from 'pages/AllPost';
 
 import Layout from 'layout';
+import PageNotFound from '../pages/PageNotFound';
+import MyPost from '../pages/MyPost';
+import NewPost from '../pages/NewPost';
+
 function App() {
   return (
       <BrowserRouter>
         <Layout>
             <Routes>
               <Route path='/' element={<Login/>}/>
-              <Route path='/new-post' element={<>Crear post</>}/>
-              <Route path='/my-posts' element={<>ruta Listado de Post</>}/>
+              <Route path='/new-post' element={<NewPost/>}/>
+              <Route path='/my-posts' element={<MyPost/>}/>
               <Route path='/all-post' element={<AllPost/>}/>
-              <Route path='/*' element={<> Pagina no encontrada - 404</>}/>
+              <Route path='/*' element={<PageNotFound/>}/>
             </Routes>
         </Layout>
       </BrowserRouter>
