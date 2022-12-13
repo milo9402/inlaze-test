@@ -7,16 +7,21 @@ import PostForm from '../components/Forms/PostForm/index';
 
 export default function Login() {
   return (
-    <>
-        <img src={WireImage} alt="WireImage"  width={400}/>
-        <div>Welcome to Wires</div>
-        <SiginForm/>
-        <SignUpForm/>
-        <PostForm/>
-        <p> &copy; 2022 All Rights Reserved . Wires  </p>
-        <p> Privacy Policy | Terms and Conditions </p>
-
-        <Card/>
-    </>
+    <div className='login_container'>
+      <div className='login-banner_img'>
+        <img className='banner-img' src={WireImage} alt="WireImage" />
+        <h2 className='banner-text'> Wires</h2>
+      </div>
+      <h1 className='title'>Welcome to Wires</h1>
+      <SiginForm/>
+      {/* <SignUpForm/> */}
+      {/* <PostForm/> */}
+      <p className='login_copy'> 
+        <span>
+          &copy; 2022
+        </span>
+      All Rights Reserved . Wires  </p>
+      <p className='login_terms'> Privacy Policy | Terms and Conditions </p>
+    </div>
   )
 }

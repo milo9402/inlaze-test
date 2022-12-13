@@ -1,0 +1,42 @@
+.login_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    .login-banner_img {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        .banner-img {
+            height: 300px;
+            aspect-ratio: auto;
+        }
+        .banner-text{
+            font-size: 50px;
+            color: $primary;
+            text-decoration: solid;
+            font-weight: 700;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .title {
+        text-decoration: solid;
+        font-weight: bold;
+        color: $white;
+    }
+    .login_copy{
+        margin-top: 5%;
+        font-size: 12px;
+        color: #425966;
+        & > span {
+            color: $white;
+        }
+    }
+    .login_terms{
+        color: $primary;
+        font-size: 10px;
+    }
+}

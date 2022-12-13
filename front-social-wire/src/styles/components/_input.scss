@@ -1,0 +1,25 @@
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 250px ;
+    .custom_input {
+        background-color: transparent;
+        border: 1px solid $white;
+        padding: 10px 30px;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 25px;
+        color: $white;
+    }
+
+    label{
+        color: $primary;
+        font-size: 15px;
+        font-weight: bold;
+
+    }
+    &.checkbox {
+        flex-direction: row;
+    }
+}
