@@ -7,9 +7,10 @@ import { Configuration } from './config/config.keys';
 import { DatabaseModule } from './database/database.module';
 import { UserModule } from './modules/user/user.module';
 import { PostModule } from './modules/post/post.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [ConfigModule, UserModule, DatabaseModule, PostModule],
+  imports: [ConfigModule, UserModule, DatabaseModule, PostModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -8,16 +8,18 @@
 @import "./components/input";
 @import "./components/button";
 @import "./components/form";
+@import "./components/card";
+@import "./components/post";
 // @import "./components/banner";
 // @import "./components/navbar";
 // @import "./components/carrousel";
-// @import "./components/card";
 // @import "./components/layout";
 // @import "./components/category";
 // @import "./components/category_grid";
 
 // pages Styless
 @import './pages/login';
+@import './pages/all_posts';
 
 
 // Screens mixins

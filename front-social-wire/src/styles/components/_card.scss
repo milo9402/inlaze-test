@@ -1,139 +1,34 @@
 .card_container{
+    width: 250px;
+    background-color: $gray-ligth;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 266px;
-    background: transparent linear-gradient(180deg, #E9F1FA 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-    box-shadow: 10px 10px 20px -5px #cccccc;
-    border-radius: 15px;
-    height:fit-content;
-    min-height: 270px;
-    scroll-snap-align: center;
-
+    padding: 20px;
+    gap: 5px;
+    .card_title .card_body {
+        color: $gray-dark;
+    } 
     .card_title{
-        color: $primary;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: baseline;
-        max-height: 40px;
-        overflow: hidden;
-        gap:5%;
-        .card_food{
-            font: normal normal normal 30px/40px Poppins;
-            letter-spacing: -0.6px;
-        }
-        .card_ingredient{
-            font: normal normal normal 30px/40px Monster Clubhouse;
-        }
+        font-size: 25px;
+        font-weight: 800;
+    }.card_body{
+        font-size: 15px;
+        margin-bottom: 20px;
     }
-
-    .card_image{
-        width: 164px;
-        height: 158px;
-        position: relative;
-        top: -25px;
-        border-radius: 50%;
-    }
-    .card_body{
-        height: 0px;
-        overflow: hidden;
-        transition: height ease 0.3s;
-        .card_body, .card_body_info{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            gap: 5px;
-    
-            .card_body_description{
-                color: $primary;
-                font: normal normal normal 17px/20px Monster Clubhouse;
-                letter-spacing: 0px;
-    
-            }
-            .card_body_value{
-                color: $secondary;
-                font: normal normal normal 15px/20px Poppins;
-                margin-bottom: 10px;
-            }
-    
-        }
-    }
-
-    .card_icons{
+    .card_footer {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        width: 100%;        
-        .card_puntuation{
-            display: inline-flex;
-            align-items: center;
-            margin-left: 2%;
-            width: 30%;
-            justify-content: space-around;
-            .card_puntuation_text{
-                font: normal normal normal 26px/39px Poppins;
-                color: $secondary;
-                margin-left: 2%;
-            }
+        &_date{
+            font-size: 12px;
+            font-style: italic;
+            color: $gray;
         }
-        .card_favorite{
-            padding-right: 5%;
-        }
-    }
-    &.open {
-        .card_body{
-            height: 286px;
-        }
-    }
-
-    @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
-        width: 266px;
-        height:269px;
-
-        .card_title{
-            .card_food, .card_ingredient{
-                font-size:30px;
-            }
-        }
-        .card_image{
-            width: 167px;
-            height: 157px;
-        }
-        .card_icons{
-            height: 36px;
-            .card_puntuation{
-                .card_puntuation_text{
-                    font-size: 26px;
-                }
-            }
-        }
-    }
-    @media screen and (max-width: $breakpoint-mobile) {
-        width: 180px;
-        height:182px;
-
-        .card_title{
-            .card_food, .card_ingredient{
-                    font-size:20px;
-            }
-        }
-        .card_image{
-            width: 100px;
-            height: 100px;
-        }
-        .card_icons{
-            height: 15px;
-            .card_puntuation{
-                .card_puntuation_text{
-                    font-size: 17px;
-                }
-            }
+        &_author{
+            font-size: 15px;
+            color: black;
+            font-weight: bolder;
         }
     }
 }
