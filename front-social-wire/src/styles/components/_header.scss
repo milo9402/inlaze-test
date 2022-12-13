@@ -29,6 +29,7 @@
         .navbar_container{
             width: 60%;
             .navbar_list {
+                color: $white;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;

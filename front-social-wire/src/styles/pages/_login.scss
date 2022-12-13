@@ -27,6 +27,15 @@
         font-weight: bold;
         color: $white;
     }
+    .login-toogle_form{
+        width: 250px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: white;
+        font-weight: 700;
+        margin-bottom: 2%;
+    }
     .login_copy{
         margin-top: 5%;
         font-size: 12px;
