@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
 
     .title {
         text-decoration: solid;
@@ -21,8 +21,8 @@
 }
 
 @media only screen and (min-width: $breakpoint-mobile) {
-    .all-post_container{
-        .all-post-search_container{
+    .my-post_container{
+        .my-post-search_container{
             width: 100%;
             display: flex;
             flex-direction: row;

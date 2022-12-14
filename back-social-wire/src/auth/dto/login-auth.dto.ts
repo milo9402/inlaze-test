@@ -7,4 +7,8 @@ export class LoginAuthDto {
   @MinLength(4)
   @MaxLength(12)
   password: string;
+
+  @MinLength(4)
+  @MaxLength(12)
+  username: string;
 }

@@ -1,18 +1,38 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { authEndpoint } from '../../../api/auth';
 
 export default function SigninForm() {
+  const [data, setData] = useState({});
+
+  const handleChange = (event:any) => {
+    let newData = { ...data , ...{[event.target.name] : event.target.value}}
+    setData(newData); 
+  };
+
+  const handleSubmit = (event:any) => {
+    event.preventDefault();
+    console.log('handle submit en el signin')
+    authEndpoint.login(data)
+    .then((resp:any)=>{
+      console.log('resp ---> ', resp )
+    })
+    .catch((error:any)=>{
+      console.log('error ---> ', error )
+    })
+  }
+
   return (
     <>
       <div>
-        <form className='form_container' action="">
+        <form className='form_container' onSubmit={handleSubmit}>
             <div className='form_group'>
               <label htmlFor="email">Email Address</label>
-              <input className='custom_input' type="text" name='email' placeholder='Email' id='email' />
+              <input className='custom_input' type="text" name='email' onChange={handleChange} placeholder='Email' id='email' />
             </div>
 
             <div className='form_group'>
-              <label htmlFor="password">Password</label>
-              <input className='custom_input' type="text" name='password' placeholder='Password' id='password' />
+              <label htmlFor="signin-password">Password</label>
+              <input className='custom_input' type="password" name='password' onChange={handleChange} placeholder='Password' id='signin-password' />
             </div>
 
             <div className='form_group checkbox'>
