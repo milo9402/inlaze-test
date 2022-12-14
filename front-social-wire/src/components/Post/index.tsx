@@ -7,11 +7,9 @@ export default function Post() {
   const { userId, currentToken } = checkJwt()
   const [card, setCard] = useState([]);
 
-  let data:any = [];
   useEffect(() => {
     postEndpoint.getAll(currentToken)
       .then((resp:any)=>{
-        console.log('resp ---> ', resp )
         setCard(resp.data);
       })
       .catch((error:any)=>{
