@@ -14,13 +14,13 @@ export class Post extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'varchar', unique: true, length: 20, nullable: false })
+  @Column({ type: 'varchar', length: 20, nullable: false })
   title: string;
 
-  @Column({ type: 'varchar', unique: true, length: 80, nullable: false })
+  @Column({ type: 'varchar', length: 80, nullable: false })
   messaje: string;
 
-  @ManyToOne((type) => User, (user) => user.username)
+  @ManyToOne((type) => User, (user) => user.id)
   @JoinColumn()
   user: User;
 

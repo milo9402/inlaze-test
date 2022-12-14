@@ -14,10 +14,11 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
 
 @Controller('user')
+@UseGuards(JwtAuthGuard)
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post('register')
+  @Post()
   async publicRegistration(@Body() createUserDto: CreateUserDto) {
     const data = await this.userService.create({
       ...createUserDto,
@@ -25,7 +26,6 @@ export class UserController {
     return { message: 'User registered', data };
   }
 
-  @UseGuards(JwtAuthGuard)
   @Get()
   findAll() {
     return this.userService.findAll();

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpStatus, HttpException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Post } from './post.entity';
@@ -9,27 +9,37 @@ import { CreatePostDto } from './dto/create-post.dto';
 export class PostService {
   constructor(
     @InjectRepository(Post)
-    private readonly userRepository: Repository<Post>,
+    private readonly postRepository: Repository<Post>,
   ) {}
 
   // Implementar los metodos para manejo de posts
-  create(createPostDto: CreatePostDto) {
-    return 'This action adds a new todo';
+  async create(createPostDto: CreatePostDto) {
+    const newPost = this.postRepository.create(createPostDto);
+    const post = await this.postRepository.save(newPost);
+    return post;
   }
 
-  findAll() {
-    return `This action returns all todo`;
+  async findAll() {
+    return await this.postRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} todo`;
+  async findOne(id: number) {
+    const post = await this.postRepository.findOne({ where: { id } });
+    if (!post) throw new HttpException('NOT_FOUND', HttpStatus.NOT_FOUND);
+    return post;
   }
 
-  update(id: number, updatePostDto: UpdatePostDto) {
-    return `This action updates a #${id} todo`;
+  async update(id: number, updatePostDto: UpdatePostDto) {
+    const post = await this.findOne(id);
+    const editedPost = {
+      ...post,
+      ...updatePostDto,
+    };
+    return await this.postRepository.save(editedPost);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} todo`;
+  async remove(id: number) {
+    const post = await this.findOne(id);
+    return await this.postRepository.remove(post);
   }
 }

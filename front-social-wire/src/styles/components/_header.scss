@@ -39,10 +39,24 @@
                 font-weight: 800;
                 .navbar_item{
                     list-style-type: none;
-                    font-size: 15px;
-                    &:hover{
-                        color: $primary;
-                        cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    color: $white;
+                    &_icon{
+                        path {
+                            fill: $white;
+                        }
+                        margin-right: 5px;
+                    }
+                    a{
+                        font-size: 15px;
+                        text-decoration: none;
+                        color: $white;
+                        &:hover{
+                            color: $primary;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
