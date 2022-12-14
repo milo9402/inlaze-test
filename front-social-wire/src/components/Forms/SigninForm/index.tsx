@@ -1,25 +1,26 @@
 import React, {useState} from 'react'
 import { authEndpoint } from '../../../api/auth';
+import Cookies from 'universal-cookie';
+import { useNavigate } from 'react-router-dom';
 
 export default function SigninForm() {
   const [data, setData] = useState({});
+  const navigate = useNavigate();
+  const cookies = new  Cookies();
 
   const handleChange = (event:any) => {
     let newData = { ...data , ...{[event.target.name] : event.target.value}}
     setData(newData); 
   };
 
-  const handleSubmit = (event:any) => {
+  const  handleSubmit = async(event:any) => {
     event.preventDefault();
-    console.log('handle submit en el signin')
-    authEndpoint.login(data)
-    .then((resp:any)=>{
-      console.log('resp ---> ', resp )
-    })
-    .catch((error:any)=>{
-      console.log('error ---> ', error )
-    })
+    const resp = await authEndpoint.login(data);
+    const { token } : any = resp.data;
+    cookies.set('jwt-token',token,{path:'/'})
+    navigate('/my-posts')
   }
+
 
   return (
     <>

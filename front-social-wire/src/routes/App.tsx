@@ -9,8 +9,12 @@ import Layout from 'layout';
 import PageNotFound from '../pages/PageNotFound';
 import MyPost from '../pages/MyPost';
 import NewPost from '../pages/NewPost';
+import Cookies from 'universal-cookie';
+
 
 function App() {
+  const cookies = new  Cookies();
+  const token = cookies.get('jwt-token');
   return (
       <BrowserRouter>
         <Layout>

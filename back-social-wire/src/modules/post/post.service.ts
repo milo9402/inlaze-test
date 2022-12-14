@@ -1,9 +1,10 @@
 import { Injectable, HttpStatus, HttpException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Between, Like, Repository } from 'typeorm';
 import { Post } from './post.entity';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { CreatePostDto } from './dto/create-post.dto';
+import { query } from 'express';
 
 @Injectable()
 export class PostService {
@@ -12,15 +13,20 @@ export class PostService {
     private readonly postRepository: Repository<Post>,
   ) {}
 
-  // Implementar los metodos para manejo de posts
   async create(createPostDto: CreatePostDto) {
     const newPost = this.postRepository.create(createPostDto);
     const post = await this.postRepository.save(newPost);
     return post;
   }
 
-  async findAll() {
-    return await this.postRepository.find();
+  async findAll(fullname?: string, date?: string) {
+    console.log(fullname, date);
+    return await this.postRepository.find({
+      where: {
+        user: Like(`%${fullname}%`),
+        // createdAt: Between(new Date(date), new Date(date)),
+      },
+    });
   }
 
   async findOne(id: number) {

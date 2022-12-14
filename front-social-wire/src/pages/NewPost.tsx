@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { checkJwt } from 'utils/checkJwt';
 import Post from '../components/Post';
 
 export default function NewPost() {
+
+  useEffect(() => {
+    checkJwt()
+  },[])
+
   return (
     <div className='new-post_container'>
         <h1 className='title'>Create Message</h1>

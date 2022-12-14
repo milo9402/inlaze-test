@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Post from '../components/Post';
+import { checkJwt } from '../utils/checkJwt';
 
 export default function AllPost() {
+
+  useEffect(() => {
+    checkJwt()
+  },[])
+
+
   return (
     <div className='all-post_container'>
         <h1 className='title'>All Messages</h1>
