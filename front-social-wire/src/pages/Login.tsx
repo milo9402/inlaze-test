@@ -2,23 +2,11 @@ import React, { useState} from 'react'
 import SiginForm from 'components/Forms/SigninForm/index';
 import SignUpForm from 'components/Forms/SignupForm';
 import WireImage from 'assets/image/image.png';
-// import { usersEndpoint } from '../api/user';
 
 export default function Login() {
 
   const [showSignUpForm, setshowSignUpForm] = useState(true);
-  
-
-  // useEffect(() => {
-  //   usersEndpoint.getAll()
-  //     .then((resp:any)=>{
-  //       console.log('resp ---> ', resp )
-  //     })
-  //     .catch((error:any)=>{
-  //       console.log('error ---> ', error )
-  //     })
-  // },[])
-  
+   
   const toggleForm = () => {
     return showSignUpForm ?  <SignUpForm /> : <SiginForm />
   }

@@ -9,5 +9,5 @@ export class CreatePostDto {
   @IsString()
   @IsNotEmpty()
   @Length(5, 80)
-  description: string;
+  message: string;
 }

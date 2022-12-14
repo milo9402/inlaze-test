@@ -19,7 +19,7 @@ export class Post extends BaseEntity {
   title: string;
 
   @Column({ type: 'varchar', length: 80, nullable: false })
-  messaje: string;
+  message: string;
 
   @ManyToOne((type) => User, (user) => user.id)
   @JoinColumn()

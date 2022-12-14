@@ -4,7 +4,6 @@ import { Between, Like, Repository } from 'typeorm';
 import { Post } from './post.entity';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { CreatePostDto } from './dto/create-post.dto';
-import { query } from 'express';
 
 @Injectable()
 export class PostService {
@@ -21,12 +20,7 @@ export class PostService {
 
   async findAll(fullname?: string, date?: string) {
     console.log(fullname, date);
-    return await this.postRepository.find({
-      where: {
-        user: Like(`%${fullname}%`),
-        // createdAt: Between(new Date(date), new Date(date)),
-      },
-    });
+    return await this.postRepository.find();
   }
 
   async findOne(id: number) {

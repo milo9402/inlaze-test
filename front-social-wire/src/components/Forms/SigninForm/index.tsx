@@ -16,8 +16,10 @@ export default function SigninForm() {
   const  handleSubmit = async(event:any) => {
     event.preventDefault();
     const resp = await authEndpoint.login(data);
-    const { token } : any = resp.data;
+    const { token, user } : any = resp.data;
     cookies.set('jwt-token',token,{path:'/'})
+    cookies.set('id',user.id,{path:'/'})
+    cookies.set('username',user.username,{path:'/'})
     navigate('/my-posts')
   }
 
